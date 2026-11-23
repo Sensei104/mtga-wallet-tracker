@@ -1,5 +1,11 @@
-﻿{
-  "last_updated": null,
-  "active_account": null,
-  "accounts": {}
+{
+  "last_updated": "2026-11-24T00:20:35+01:00",
+  "active_account": "UnknownAccount",
+  "accounts": {
+    "UnknownAccount": {
+      "gold": 2750,
+      "gems": 2330,
+      "updated_at": "2026-11-24T00:20:35+01:00"
+    }
+  }
 }
