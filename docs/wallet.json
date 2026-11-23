@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-24T00:44:14+01:00",
-  "active_account": "Cherubino#46284",
+  "last_updated": "2026-11-24T00:48:05+01:00",
+  "active_account": "Subarashi#13357",
   "accounts": {
     "UnknownAccount": {
       "gold": 2750,
@@ -11,6 +11,11 @@
       "gold": 2600,
       "gems": 5965,
       "updated_at": "2026-11-24T00:44:14+01:00"
+    },
+    "Subarashi#13357": {
+      "gold": 17725,
+      "gems": 90,
+      "updated_at": "2026-11-24T00:48:05+01:00"
     }
   }
 }
