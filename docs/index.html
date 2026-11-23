@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MTGA Wallet Tracker</title>
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#111318" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="MTGA Wallet" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 1.25rem; background: #111318; color: #f0f2f5; }
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
+    h1 { font-size: 1.3rem; margin: 0; }
+    button { background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 0.5rem 0.85rem; font-size: 0.9rem; cursor: pointer; }
+    .meta { color: #9aa4b2; font-size: 0.85rem; margin-bottom: 1.25rem; }
+    .card { background: #1a1e26; border: 1px solid #2c3340; border-radius: 10px; padding: 0.9rem 1rem; margin-bottom: 0.75rem; }
+    .acc-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem; }
+    .balances { display: flex; gap: 1.5rem; font-size: 0.95rem; }
+    .updated { color: #8b95a5; font-size: 0.78rem; margin-top: 0.4rem; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <h1>MTGA Wallet</h1>
+    <button id="refreshBtn" type="button">Aggiorna</button>
+  </div>
+  <div class="meta" id="metaInfo">Caricamento...</div>
+  <div id="accountsList"></div>
+  <script>
+    async function loadWallet() {
+      const metaEl = document.getElementById("metaInfo");
+      const listEl = document.getElementById("accountsList");
+      try {
+        const res = await fetch(`./wallet.json?t=${Date.now()}`, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        metaEl.textContent = `Ultimo sync: ${data.last_updated || "-"} · Ultimo account: ${data.active_account || "-"}`;
+        const accounts = data.accounts || {};
+        const entries = Object.entries(accounts);
+        if (entries.length === 0) {
+          listEl.innerHTML = `<div class="card">Nessun account registrato al momento.</div>`;
+          return;
+        }
+        listEl.innerHTML = entries.map(([name, info]) => `
+          <div class="card">
+            <div class="acc-name">${escapeHtml(name)}</div>
+            <div class="balances">
+              <div><strong>Gold:</strong> ${Number(info.gold ?? 0).toLocaleString("it-IT")}</div>
+              <div><strong>Gems:</strong> ${Number(info.gems ?? 0).toLocaleString("it-IT")}</div>
+            </div>
+            <div class="updated">Aggiornato: ${escapeHtml(info.updated_at || "-")}</div>
+          </div>
+        `).join("");
+      } catch (err) {
+        metaEl.textContent = `Errore lettura dati: ${err.message}`;
+      }
+    }
+    function escapeHtml(str) {
+      return String(str).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+    }
+    document.getElementById("refreshBtn").addEventListener("click", loadWallet);
+    loadWallet();
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js").catch(() => {});
+    }
+  </script>
+</body>
+</html>
