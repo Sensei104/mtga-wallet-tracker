@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-25T20:10:38+01:00",
-  "active_account": "GoblinGooner#18664",
+  "last_updated": "2026-11-25T20:47:42+01:00",
+  "active_account": "ArmpitZealot#90503",
   "accounts": {
     "Cherubino#46284": {
       "gold": 2600,
@@ -91,6 +91,11 @@
       "gold": 34800,
       "gems": 8750,
       "updated_at": "2026-11-25T20:10:38+01:00"
+    },
+    "ArmpitZealot#90503": {
+      "gold": 24900,
+      "gems": 5400,
+      "updated_at": "2026-11-25T20:47:42+01:00"
     }
   }
 }
