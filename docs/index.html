@@ -15,7 +15,6 @@
       --muted: #8b95a5;
       --gold: #f5c542;
       --gems: #4fc3f7;
-      --accent: #a78bfa;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -46,17 +45,30 @@
 
     .summary {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 6px;
-      background: var(--card);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .sum-item {
+      background: #222834;
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 10px 6px;
-      margin-bottom: 14px;
       text-align: center;
     }
-    .sum-item .lbl { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; }
-    .sum-item .val { font-size: 0.9rem; font-weight: 700; margin-top: 2px; }
+    .sum-item .lbl {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+    .sum-item .val {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-top: 4px;
+      font-variant-numeric: tabular-nums;
+    }
 
     .account-table {
       width: 100%;
@@ -152,18 +164,15 @@
           return;
         }
 
-        // Ordina dal più recente (o per nome se manca data)
         accounts.sort((a, b) => String(b.updated).localeCompare(String(a.updated)));
 
-        let totGold = 0, totGems = 0, totDraft = 0, totUb = 0, totIp = 0;
+        let totDraft = 0, totUb = 0, totIp = 0;
 
         listEl.innerHTML = accounts.map(acc => {
           const draft = Math.floor(acc.gold / 10000);
           const ubDir = Math.floor(acc.gems / 8000);
           const ipDir = Math.floor(acc.gems / 6000);
 
-          totGold += acc.gold;
-          totGems += acc.gems;
           totDraft += draft;
           totUb += ubDir;
           totIp += ipDir;
@@ -196,11 +205,9 @@
 
         sumEl.style.display = "grid";
         sumEl.innerHTML = `
-          <div class="sum-item"><div class="lbl">$ Tot</div><div class="val gold">${fmtNum(totGold)}</div></div>
-          <div class="sum-item"><div class="lbl">G Tot</div><div class="val gems">${fmtNum(totGems)}</div></div>
-          <div class="sum-item"><div class="lbl">Draft</div><div class="val">${totDraft}</div></div>
-          <div class="sum-item"><div class="lbl">UB-DIR</div><div class="val">${totUb}</div></div>
-          <div class="sum-item"><div class="lbl">IP-DIR</div><div class="val">${totIp}</div></div>
+          <div class="sum-item"><div class="lbl">TOT DRAFT</div><div class="val gold">${totDraft}</div></div>
+          <div class="sum-item"><div class="lbl">TOT UB-DIR</div><div class="val gems">${totUb}</div></div>
+          <div class="sum-item"><div class="lbl">TOT IP-DIR</div><div class="val gems">${totIp}</div></div>
         `;
       } catch (err) {
         listEl.innerHTML = `<div class="status">Errore caricamento dati: ${err.message}</div>`;
