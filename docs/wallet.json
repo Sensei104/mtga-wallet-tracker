@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-25T17:16:11+01:00",
-  "active_account": "Deeokhan#65004",
+  "last_updated": "2026-11-25T17:51:03+01:00",
+  "active_account": "Eternaldragon#36277",
   "accounts": {
     "Cherubino#46284": {
       "gold": 2600,
@@ -66,6 +66,11 @@
       "gold": 111925,
       "gems": 830,
       "updated_at": "2026-11-25T17:16:11+01:00"
+    },
+    "Eternaldragon#36277": {
+      "gold": 84875,
+      "gems": 1710,
+      "updated_at": "2026-11-25T17:51:03+01:00"
     }
   }
 }
