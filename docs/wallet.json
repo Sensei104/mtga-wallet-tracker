@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-24T12:24:38+01:00",
-  "active_account": "RonkeyDLuffy#39505",
+  "last_updated": "2026-11-25T10:18:02+01:00",
+  "active_account": "Azdora#70655",
   "accounts": {
     "Cherubino#46284": {
       "gold": 2600,
@@ -13,9 +13,54 @@
       "updated_at": "2026-11-24T00:48:05+01:00"
     },
     "RonkeyDLuffy#39505": {
-      "gold": 11825,
+      "gold": 13875,
       "gems": 5930,
-      "updated_at": "2026-11-24T12:24:38+01:00"
+      "updated_at": "2026-11-24T13:00:21+01:00"
+    },
+    "Piediny_MTG#76661": {
+      "gold": 6600,
+      "gems": 2320,
+      "updated_at": "2026-11-24T13:31:29+01:00"
+    },
+    "Nombo#94677": {
+      "gold": 25600,
+      "gems": 110,
+      "updated_at": "2026-11-24T14:07:11+01:00"
+    },
+    "Chocolate_freezer#42921": {
+      "gold": 38325,
+      "gems": 15580,
+      "updated_at": "2026-11-24T14:42:16+01:00"
+    },
+    "SussyBaka#79564": {
+      "gold": 98450,
+      "gems": 1770,
+      "updated_at": "2026-11-24T15:18:09+01:00"
+    },
+    "Adulto_Funzionale#81557": {
+      "gold": 53850,
+      "gems": 3670,
+      "updated_at": "2026-11-24T15:49:53+01:00"
+    },
+    "Gremlins#85709": {
+      "gold": 33350,
+      "gems": 900,
+      "updated_at": "2026-11-24T16:29:39+01:00"
+    },
+    "Paroxetine#03956": {
+      "gold": 133975,
+      "gems": 2490,
+      "updated_at": "2026-11-24T17:08:09+01:00"
+    },
+    "AsdoKun#12055": {
+      "gold": 114575,
+      "gems": 10780,
+      "updated_at": "2026-11-24T17:43:06+01:00"
+    },
+    "Azdora#70655": {
+      "gold": 85200,
+      "gems": 20,
+      "updated_at": "2026-11-25T10:18:02+01:00"
     }
   }
 }
