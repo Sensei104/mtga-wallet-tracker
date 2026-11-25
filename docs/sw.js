@@ -1,5 +1,5 @@
-﻿const CACHE_NAME = "mtga-wallet-v1";
-const STATIC_ASSETS = ["./", "./index.html", "./manifest.json"];
+﻿const CACHE_NAME = "mtga-wallet-v2";
+const STATIC_ASSETS = ["./", "./index.html"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -19,7 +19,7 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
-  if (url.pathname.endsWith("/wallet.json")) {
+  if (url.pathname.endsWith("/wallet.json") || url.pathname.endsWith("/manifest.json")) {
     event.respondWith(
       fetch(event.request, { cache: "no-store" }).catch(() => caches.match(event.request))
     );
