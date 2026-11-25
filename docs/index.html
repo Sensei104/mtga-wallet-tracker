@@ -133,6 +133,29 @@
       navigator.serviceWorker.register("./sw.js").catch(() => {});
     }
 
+    const CUSTOM_ORDER = [
+      "Cherubino#46284",
+      "Subarashi#13357",
+      "RonkeyDLuffy#39505",
+      "Piediny_MTG#76661",
+      "Nombo#94677",
+      "Chocolate_freezer#42921",
+      "SussyBaka#79564",
+      "PuffoDio#66049",
+      "Adulto_Funzionale#81557",
+      "Gremlins#85709",
+      "Paroxetine#03956",
+      "AsdoKun#12055",
+      "Azdora#70655",
+      "Deeokhan#65004",
+      "Eternaldragon#36277",
+      "TokaiTeio#97373",
+      "Peasant#46528",
+      "SchoolPrisoner#44684",
+      "GoblinGooner#18664",
+      "ArmpitZealot#90503"
+    ];
+
     function fmtNum(n) {
       return Number(n || 0).toLocaleString("it-IT");
     }
@@ -164,7 +187,14 @@
           return;
         }
 
-        accounts.sort((a, b) => String(b.updated).localeCompare(String(a.updated)));
+        accounts.sort((a, b) => {
+          const idxA = CUSTOM_ORDER.indexOf(a.name);
+          const idxB = CUSTOM_ORDER.indexOf(b.name);
+          if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+          if (idxA !== -1) return -1;
+          if (idxB !== -1) return 1;
+          return String(b.updated).localeCompare(String(a.updated));
+        });
 
         let totDraft = 0, totUb = 0, totIp = 0;
 
