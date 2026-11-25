@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-25T17:51:03+01:00",
-  "active_account": "Eternaldragon#36277",
+  "last_updated": "2026-11-25T18:27:41+01:00",
+  "active_account": "TokaiTeio#97373",
   "accounts": {
     "Cherubino#46284": {
       "gold": 2600,
@@ -71,6 +71,11 @@
       "gold": 84875,
       "gems": 1710,
       "updated_at": "2026-11-25T17:51:03+01:00"
+    },
+    "TokaiTeio#97373": {
+      "gold": 45800,
+      "gems": 2550,
+      "updated_at": "2026-11-25T18:27:41+01:00"
     }
   }
 }
