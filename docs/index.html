@@ -4,69 +4,210 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MTGA Wallet Tracker</title>
-  <link rel="manifest" href="./manifest.json" />
+  <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#111318" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="MTGA Wallet" />
-  <link rel="apple-touch-icon" href="./icon-192.png" />
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 1.25rem; background: #111318; color: #f0f2f5; }
-    .top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
-    h1 { font-size: 1.3rem; margin: 0; }
-    button { background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 0.5rem 0.85rem; font-size: 0.9rem; cursor: pointer; }
-    .meta { color: #9aa4b2; font-size: 0.85rem; margin-bottom: 1.25rem; }
-    .card { background: #1a1e26; border: 1px solid #2c3340; border-radius: 10px; padding: 0.9rem 1rem; margin-bottom: 0.75rem; }
-    .acc-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem; }
-    .balances { display: flex; gap: 1.5rem; font-size: 0.95rem; }
-    .updated { color: #8b95a5; font-size: 0.78rem; margin-top: 0.4rem; }
+    :root {
+      --bg: #111318;
+      --card: #1a1e26;
+      --border: #2c3340;
+      --text: #e8ecf1;
+      --muted: #8b95a5;
+      --gold: #f5c542;
+      --gems: #4fc3f7;
+      --accent: #a78bfa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 14px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.3px; }
+    button.refresh {
+      background: #252b36;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    button.refresh:active { opacity: 0.7; }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 6px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .sum-item .lbl { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; }
+    .sum-item .val { font-size: 0.9rem; font-weight: 700; margin-top: 2px; }
+
+    .account-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      table-layout: fixed;
+    }
+    .account-table td {
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      font-size: 0.9rem;
+    }
+    .row-name td {
+      background: #222834;
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: 0.4px;
+      color: #ffffff;
+    }
+    .lbl-cell {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.78rem;
+    }
+    .val-cell {
+      text-align: right;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .gold { color: var(--gold); }
+    .gems { color: var(--gems); }
+    .calc { color: var(--text); }
+    .row-update td {
+      font-size: 0.74rem;
+      color: var(--muted);
+      background: #161a21;
+      padding: 6px 10px;
+    }
+    .status {
+      text-align: center;
+      color: var(--muted);
+      padding: 30px 10px;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <div class="top">
+  <header>
     <h1>MTGA Wallet</h1>
-    <button id="refreshBtn" type="button">Aggiorna</button>
-  </div>
-  <div class="meta" id="metaInfo">Caricamento...</div>
-  <div id="accountsList"></div>
+    <button class="refresh" onclick="loadWallet()">Aggiorna</button>
+  </header>
+
+  <div id="summary" class="summary" style="display:none;"></div>
+  <div id="list"><div class="status">Caricamento...</div></div>
+
   <script>
-    async function loadWallet() {
-      const metaEl = document.getElementById("metaInfo");
-      const listEl = document.getElementById("accountsList");
-      try {
-        const res = await fetch(`./wallet.json?t=${Date.now()}`, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
-        metaEl.textContent = `Ultimo sync: ${data.last_updated || "-"} · Ultimo account: ${data.active_account || "-"}`;
-        const accounts = data.accounts || {};
-        const entries = Object.entries(accounts);
-        if (entries.length === 0) {
-          listEl.innerHTML = `<div class="card">Nessun account registrato al momento.</div>`;
-          return;
-        }
-        listEl.innerHTML = entries.map(([name, info]) => `
-          <div class="card">
-            <div class="acc-name">${escapeHtml(name)}</div>
-            <div class="balances">
-              <div><strong>Gold:</strong> ${Number(info.gold ?? 0).toLocaleString("it-IT")}</div>
-              <div><strong>Gems:</strong> ${Number(info.gems ?? 0).toLocaleString("it-IT")}</div>
-            </div>
-            <div class="updated">Aggiornato: ${escapeHtml(info.updated_at || "-")}</div>
-          </div>
-        `).join("");
-      } catch (err) {
-        metaEl.textContent = `Errore lettura dati: ${err.message}`;
-      }
-    }
-    function escapeHtml(str) {
-      return String(str).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
-    }
-    document.getElementById("refreshBtn").addEventListener("click", loadWallet);
-    loadWallet();
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("./sw.js").catch(() => {});
     }
+
+    function fmtNum(n) {
+      return Number(n || 0).toLocaleString("it-IT");
+    }
+
+    function normalizeAccounts(data) {
+      if (Array.isArray(data)) return data;
+      const source = data && typeof data.accounts === "object" ? data.accounts : data;
+      if (!source || typeof source !== "object") return [];
+      return Object.entries(source).map(([key, val]) => ({
+        name: val.account || val.name || key,
+        gold: Number(val.gold ?? val.Gold ?? 0),
+        gems: Number(val.gems ?? val.Gems ?? 0),
+        updated: val.updated_at || val.last_update || val.timestamp || "-"
+      }));
+    }
+
+    async function loadWallet() {
+      const listEl = document.getElementById("list");
+      const sumEl = document.getElementById("summary");
+      try {
+        const res = await fetch("./wallet.json?t=" + Date.now(), { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const data = await res.json();
+        const accounts = normalizeAccounts(data);
+
+        if (!accounts.length) {
+          listEl.innerHTML = '<div class="status">Nessun account trovato.</div>';
+          sumEl.style.display = "none";
+          return;
+        }
+
+        // Ordina dal più recente (o per nome se manca data)
+        accounts.sort((a, b) => String(b.updated).localeCompare(String(a.updated)));
+
+        let totGold = 0, totGems = 0, totDraft = 0, totUb = 0, totIp = 0;
+
+        listEl.innerHTML = accounts.map(acc => {
+          const draft = Math.floor(acc.gold / 10000);
+          const ubDir = Math.floor(acc.gems / 8000);
+          const ipDir = Math.floor(acc.gems / 6000);
+
+          totGold += acc.gold;
+          totGems += acc.gems;
+          totDraft += draft;
+          totUb += ubDir;
+          totIp += ipDir;
+
+          return `
+            <table class="account-table">
+              <tr class="row-name">
+                <td colspan="6">${acc.name}</td>
+              </tr>
+              <tr>
+                <td class="lbl-cell gold">$</td>
+                <td colspan="2" class="val-cell gold">${fmtNum(acc.gold)}</td>
+                <td class="lbl-cell gems">G</td>
+                <td colspan="2" class="val-cell gems">${fmtNum(acc.gems)}</td>
+              </tr>
+              <tr>
+                <td class="lbl-cell">DRAFT</td>
+                <td class="val-cell calc">${draft}</td>
+                <td class="lbl-cell">UB-DIR</td>
+                <td class="val-cell calc">${ubDir}</td>
+                <td class="lbl-cell">IP-DIR</td>
+                <td class="val-cell calc">${ipDir}</td>
+              </tr>
+              <tr class="row-update">
+                <td colspan="6">LAST UPDATE ${acc.updated}</td>
+              </tr>
+            </table>
+          `;
+        }).join("");
+
+        sumEl.style.display = "grid";
+        sumEl.innerHTML = `
+          <div class="sum-item"><div class="lbl">$ Tot</div><div class="val gold">${fmtNum(totGold)}</div></div>
+          <div class="sum-item"><div class="lbl">G Tot</div><div class="val gems">${fmtNum(totGems)}</div></div>
+          <div class="sum-item"><div class="lbl">Draft</div><div class="val">${totDraft}</div></div>
+          <div class="sum-item"><div class="lbl">UB-DIR</div><div class="val">${totUb}</div></div>
+          <div class="sum-item"><div class="lbl">IP-DIR</div><div class="val">${totIp}</div></div>
+        `;
+      } catch (err) {
+        listEl.innerHTML = `<div class="status">Errore caricamento dati: ${err.message}</div>`;
+      }
+    }
+
+    loadWallet();
   </script>
 </body>
 </html>
