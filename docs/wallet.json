@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-25T23:32:35+01:00",
-  "active_account": "PuffoDio#66049",
+  "last_updated": "2026-11-27T10:44:24+01:00",
+  "active_account": "UnknownAccount",
   "accounts": {
     "Cherubino#46284": {
       "gold": 2600,
@@ -101,6 +101,11 @@
       "gold": 3500,
       "gems": 2410,
       "updated_at": "2026-11-25T23:32:35+01:00"
+    },
+    "UnknownAccount": {
+      "gold": 6175,
+      "gems": 7330,
+      "updated_at": "2026-11-27T10:44:24+01:00"
     }
   }
 }
