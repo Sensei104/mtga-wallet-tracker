@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T13:43:33+01:00",
-  "active_account": "SussyBaka#79564",
+  "last_updated": "2026-11-27T14:16:52+01:00",
+  "active_account": "Adulto_Funzionale#81557",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -31,6 +31,11 @@
       "gold": 101700,
       "gems": 1770,
       "updated_at": "2026-11-27T13:43:33+01:00"
+    },
+    "Adulto_Funzionale#81557": {
+      "gold": 38150,
+      "gems": 3920,
+      "updated_at": "2026-11-27T14:16:52+01:00"
     }
   }
 }
