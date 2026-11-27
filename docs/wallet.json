@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T15:31:18+01:00",
-  "active_account": "Paroxetine#03956",
+  "last_updated": "2026-11-27T16:08:42+01:00",
+  "active_account": "AsdoKun#12055",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -46,6 +46,11 @@
       "gold": 135025,
       "gems": 2490,
       "updated_at": "2026-11-27T15:31:18+01:00"
+    },
+    "AsdoKun#12055": {
+      "gold": 116975,
+      "gems": 10780,
+      "updated_at": "2026-11-27T16:08:42+01:00"
     }
   }
 }
