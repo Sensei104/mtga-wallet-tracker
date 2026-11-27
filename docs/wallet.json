@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T20:11:04+01:00",
-  "active_account": "GoblinGooner#18664",
+  "last_updated": "2026-11-27T20:44:48+01:00",
+  "active_account": "ArmpitZealot#90503",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -86,6 +86,11 @@
       "gold": 35750,
       "gems": 8750,
       "updated_at": "2026-11-27T20:11:04+01:00"
+    },
+    "ArmpitZealot#90503": {
+      "gold": 27050,
+      "gems": 5400,
+      "updated_at": "2026-11-27T20:44:48+01:00"
     }
   }
 }
