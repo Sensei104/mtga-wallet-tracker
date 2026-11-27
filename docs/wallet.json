@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T11:27:03+01:00",
-  "active_account": "RonkeyDLuffy#39505",
+  "last_updated": "2026-11-27T12:02:57+01:00",
+  "active_account": "Piediny_MTG#76661",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -11,6 +11,11 @@
       "gold": 6175,
       "gems": 7330,
       "updated_at": "2026-11-27T11:27:03+01:00"
+    },
+    "Piediny_MTG#76661": {
+      "gold": 9700,
+      "gems": 2320,
+      "updated_at": "2026-11-27T12:02:57+01:00"
     }
   }
 }
