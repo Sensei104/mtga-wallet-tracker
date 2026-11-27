@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T16:44:32+01:00",
-  "active_account": "Azdora#70655",
+  "last_updated": "2026-11-27T17:16:06+01:00",
+  "active_account": "Deeokhan#65004",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -56,6 +56,11 @@
       "gold": 86400,
       "gems": 20,
       "updated_at": "2026-11-27T16:44:32+01:00"
+    },
+    "Deeokhan#65004": {
+      "gold": 113275,
+      "gems": 830,
+      "updated_at": "2026-11-27T17:16:06+01:00"
     }
   }
 }
