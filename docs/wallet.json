@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T14:16:52+01:00",
-  "active_account": "Adulto_Funzionale#81557",
+  "last_updated": "2026-11-27T14:57:15+01:00",
+  "active_account": "Gremlins#85709",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -36,6 +36,11 @@
       "gold": 38150,
       "gems": 3920,
       "updated_at": "2026-11-27T14:16:52+01:00"
+    },
+    "Gremlins#85709": {
+      "gold": 36250,
+      "gems": 900,
+      "updated_at": "2026-11-27T14:57:15+01:00"
     }
   }
 }
