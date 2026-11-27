@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T14:57:15+01:00",
-  "active_account": "Gremlins#85709",
+  "last_updated": "2026-11-27T15:31:18+01:00",
+  "active_account": "Paroxetine#03956",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -41,6 +41,11 @@
       "gold": 36250,
       "gems": 900,
       "updated_at": "2026-11-27T14:57:15+01:00"
+    },
+    "Paroxetine#03956": {
+      "gold": 135025,
+      "gems": 2490,
+      "updated_at": "2026-11-27T15:31:18+01:00"
     }
   }
 }
