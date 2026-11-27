@@ -160,6 +160,18 @@
       return Number(n || 0).toLocaleString("it-IT");
     }
 
+    function fmtDate(raw) {
+      if (!raw || raw === "-") return "-";
+      const d = new Date(raw);
+      if (isNaN(d.getTime())) return raw;
+      const gg = String(d.getDate()).padStart(2, "0");
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const aaaa = d.getFullYear();
+      const hh = String(d.getHours()).padStart(2, "0");
+      const min = String(d.getMinutes()).padStart(2, "0");
+      return `${gg}/${mm}/${aaaa} ${hh}:${min}`;
+    }
+
     function normalizeAccounts(data) {
       if (Array.isArray(data)) return data;
       const source = data && typeof data.accounts === "object" ? data.accounts : data;
@@ -227,7 +239,7 @@
                 <td class="val-cell calc">${ipDir}</td>
               </tr>
               <tr class="row-update">
-                <td colspan="6">LAST UPDATE ${acc.updated}</td>
+                <td colspan="6">LAST UPDATE: ${fmtDate(acc.updated)}</td>
               </tr>
             </table>
           `;
