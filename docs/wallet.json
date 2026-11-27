@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T12:38:47+01:00",
-  "active_account": "Nombo#94677",
+  "last_updated": "2026-11-27T13:10:00+01:00",
+  "active_account": "Chocolate_freezer#42921",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -21,6 +21,11 @@
       "gold": 27400,
       "gems": 110,
       "updated_at": "2026-11-27T12:38:47+01:00"
+    },
+    "Chocolate_freezer#42921": {
+      "gold": 40725,
+      "gems": 15580,
+      "updated_at": "2026-11-27T13:10:00+01:00"
     }
   }
 }
