@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T17:52:14+01:00",
-  "active_account": "Eternaldragon#36277",
+  "last_updated": "2026-11-27T18:26:14+01:00",
+  "active_account": "TokaiTeio#97373",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -66,6 +66,11 @@
       "gold": 85775,
       "gems": 1710,
       "updated_at": "2026-11-27T17:52:14+01:00"
+    },
+    "TokaiTeio#97373": {
+      "gold": 47950,
+      "gems": 2550,
+      "updated_at": "2026-11-27T18:26:14+01:00"
     }
   }
 }
