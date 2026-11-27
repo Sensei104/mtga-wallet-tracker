@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T19:37:31+01:00",
-  "active_account": "SchoolPrisoner#44684",
+  "last_updated": "2026-11-27T20:11:04+01:00",
+  "active_account": "GoblinGooner#18664",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -81,6 +81,11 @@
       "gold": 48850,
       "gems": 4630,
       "updated_at": "2026-11-27T19:37:31+01:00"
+    },
+    "GoblinGooner#18664": {
+      "gold": 35750,
+      "gems": 8750,
+      "updated_at": "2026-11-27T20:11:04+01:00"
     }
   }
 }
