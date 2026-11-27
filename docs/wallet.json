@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T17:16:06+01:00",
-  "active_account": "Deeokhan#65004",
+  "last_updated": "2026-11-27T17:52:14+01:00",
+  "active_account": "Eternaldragon#36277",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -61,6 +61,11 @@
       "gold": 113275,
       "gems": 830,
       "updated_at": "2026-11-27T17:16:06+01:00"
+    },
+    "Eternaldragon#36277": {
+      "gold": 85775,
+      "gems": 1710,
+      "updated_at": "2026-11-27T17:52:14+01:00"
     }
   }
 }
