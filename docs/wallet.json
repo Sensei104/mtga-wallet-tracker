@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T19:04:47+01:00",
-  "active_account": "Peasant#46528",
+  "last_updated": "2026-11-27T19:37:31+01:00",
+  "active_account": "SchoolPrisoner#44684",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -76,6 +76,11 @@
       "gold": 28875,
       "gems": 1290,
       "updated_at": "2026-11-27T19:04:47+01:00"
+    },
+    "SchoolPrisoner#44684": {
+      "gold": 48850,
+      "gems": 4630,
+      "updated_at": "2026-11-27T19:37:31+01:00"
     }
   }
 }
