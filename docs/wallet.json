@@ -1,111 +1,106 @@
-{
-  "last_updated": "2026-11-27T10:44:24+01:00",
-  "active_account": "UnknownAccount",
-  "accounts": {
-    "Cherubino#46284": {
-      "gold": 2600,
-      "gems": 5965,
-      "updated_at": "2026-11-24T00:44:14+01:00"
-    },
-    "Subarashi#13357": {
-      "gold": 19375,
-      "gems": 90,
-      "updated_at": "2026-11-25T21:24:27+01:00"
-    },
-    "RonkeyDLuffy#39505": {
-      "gold": 14275,
-      "gems": 5930,
-      "updated_at": "2026-11-25T22:26:31+01:00"
-    },
-    "Piediny_MTG#76661": {
-      "gold": 7150,
-      "gems": 2320,
-      "updated_at": "2026-11-25T12:15:59+01:00"
-    },
-    "Nombo#94677": {
-      "gold": 25850,
-      "gems": 110,
-      "updated_at": "2026-11-25T12:49:28+01:00"
-    },
-    "Chocolate_freezer#42921": {
-      "gold": 39625,
-      "gems": 15580,
-      "updated_at": "2026-11-25T13:21:27+01:00"
-    },
-    "SussyBaka#79564": {
-      "gold": 100500,
-      "gems": 1770,
-      "updated_at": "2026-11-25T13:55:45+01:00"
-    },
-    "Adulto_Funzionale#81557": {
-      "gold": 54400,
-      "gems": 3670,
-      "updated_at": "2026-11-25T14:27:24+01:00"
-    },
-    "Gremlins#85709": {
-      "gold": 34100,
-      "gems": 900,
-      "updated_at": "2026-11-25T14:59:33+01:00"
-    },
-    "Paroxetine#03956": {
-      "gold": 134325,
-      "gems": 2490,
-      "updated_at": "2026-11-25T15:35:20+01:00"
-    },
-    "AsdoKun#12055": {
-      "gold": 115525,
-      "gems": 10780,
-      "updated_at": "2026-11-25T16:06:43+01:00"
-    },
-    "Azdora#70655": {
-      "gold": 85200,
-      "gems": 20,
-      "updated_at": "2026-11-25T16:39:55+01:00"
-    },
-    "Deeokhan#65004": {
-      "gold": 111925,
-      "gems": 830,
-      "updated_at": "2026-11-25T17:16:11+01:00"
-    },
-    "Eternaldragon#36277": {
-      "gold": 84875,
-      "gems": 1710,
-      "updated_at": "2026-11-25T17:51:03+01:00"
-    },
-    "TokaiTeio#97373": {
-      "gold": 45800,
-      "gems": 2550,
-      "updated_at": "2026-11-25T18:27:41+01:00"
-    },
-    "Peasant#46528": {
-      "gold": 27575,
-      "gems": 1290,
-      "updated_at": "2026-11-25T18:59:52+01:00"
-    },
-    "SchoolPrisoner#44684": {
-      "gold": 48250,
-      "gems": 4630,
-      "updated_at": "2026-11-25T19:35:20+01:00"
-    },
-    "GoblinGooner#18664": {
-      "gold": 34800,
-      "gems": 8750,
-      "updated_at": "2026-11-25T20:10:38+01:00"
-    },
-    "ArmpitZealot#90503": {
-      "gold": 24900,
-      "gems": 5400,
-      "updated_at": "2026-11-25T20:47:42+01:00"
-    },
-    "PuffoDio#66049": {
-      "gold": 3500,
-      "gems": 2410,
-      "updated_at": "2026-11-25T23:32:35+01:00"
-    },
-    "UnknownAccount": {
-      "gold": 6175,
-      "gems": 7330,
-      "updated_at": "2026-11-27T10:44:24+01:00"
-    }
-  }
+﻿{
+    "last_updated":  "2026-11-27T10:44:24+01:00",
+    "active_account":  "UnknownAccount",
+    "accounts":  {
+                     "Cherubino#46284":  {
+                                             "gold":  2600,
+                                             "gems":  5965,
+                                             "updated_at":  "2026-11-24T00:44:14+01:00"
+                                         },
+                     "Subarashi#13357":  {
+                                             "gold":  19375,
+                                             "gems":  90,
+                                             "updated_at":  "2026-11-25T21:24:27+01:00"
+                                         },
+                     "RonkeyDLuffy#39505":  {
+                                                "gold":  14275,
+                                                "gems":  5930,
+                                                "updated_at":  "2026-11-25T22:26:31+01:00"
+                                            },
+                     "Piediny_MTG#76661":  {
+                                               "gold":  7150,
+                                               "gems":  2320,
+                                               "updated_at":  "2026-11-25T12:15:59+01:00"
+                                           },
+                     "Nombo#94677":  {
+                                         "gold":  25850,
+                                         "gems":  110,
+                                         "updated_at":  "2026-11-25T12:49:28+01:00"
+                                     },
+                     "Chocolate_freezer#42921":  {
+                                                     "gold":  39625,
+                                                     "gems":  15580,
+                                                     "updated_at":  "2026-11-25T13:21:27+01:00"
+                                                 },
+                     "SussyBaka#79564":  {
+                                             "gold":  100500,
+                                             "gems":  1770,
+                                             "updated_at":  "2026-11-25T13:55:45+01:00"
+                                         },
+                     "Adulto_Funzionale#81557":  {
+                                                     "gold":  54400,
+                                                     "gems":  3670,
+                                                     "updated_at":  "2026-11-25T14:27:24+01:00"
+                                                 },
+                     "Gremlins#85709":  {
+                                            "gold":  34100,
+                                            "gems":  900,
+                                            "updated_at":  "2026-11-25T14:59:33+01:00"
+                                        },
+                     "Paroxetine#03956":  {
+                                              "gold":  134325,
+                                              "gems":  2490,
+                                              "updated_at":  "2026-11-25T15:35:20+01:00"
+                                          },
+                     "AsdoKun#12055":  {
+                                           "gold":  115525,
+                                           "gems":  10780,
+                                           "updated_at":  "2026-11-25T16:06:43+01:00"
+                                       },
+                     "Azdora#70655":  {
+                                          "gold":  85200,
+                                          "gems":  20,
+                                          "updated_at":  "2026-11-25T16:39:55+01:00"
+                                      },
+                     "Deeokhan#65004":  {
+                                            "gold":  111925,
+                                            "gems":  830,
+                                            "updated_at":  "2026-11-25T17:16:11+01:00"
+                                        },
+                     "Eternaldragon#36277":  {
+                                                 "gold":  84875,
+                                                 "gems":  1710,
+                                                 "updated_at":  "2026-11-25T17:51:03+01:00"
+                                             },
+                     "TokaiTeio#97373":  {
+                                             "gold":  45800,
+                                             "gems":  2550,
+                                             "updated_at":  "2026-11-25T18:27:41+01:00"
+                                         },
+                     "Peasant#46528":  {
+                                           "gold":  27575,
+                                           "gems":  1290,
+                                           "updated_at":  "2026-11-25T18:59:52+01:00"
+                                       },
+                     "SchoolPrisoner#44684":  {
+                                                  "gold":  48250,
+                                                  "gems":  4630,
+                                                  "updated_at":  "2026-11-25T19:35:20+01:00"
+                                              },
+                     "GoblinGooner#18664":  {
+                                                "gold":  34800,
+                                                "gems":  8750,
+                                                "updated_at":  "2026-11-25T20:10:38+01:00"
+                                            },
+                     "ArmpitZealot#90503":  {
+                                                "gold":  24900,
+                                                "gems":  5400,
+                                                "updated_at":  "2026-11-25T20:47:42+01:00"
+                                            },
+                     "PuffoDio#66049":  {
+                                            "gold":  3500,
+                                            "gems":  2410,
+                                            "updated_at":  "2026-11-25T23:32:35+01:00"
+                                        }
+                 }
 }
