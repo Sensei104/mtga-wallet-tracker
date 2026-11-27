@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T13:10:00+01:00",
-  "active_account": "Chocolate_freezer#42921",
+  "last_updated": "2026-11-27T13:43:33+01:00",
+  "active_account": "SussyBaka#79564",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -26,6 +26,11 @@
       "gold": 40725,
       "gems": 15580,
       "updated_at": "2026-11-27T13:10:00+01:00"
+    },
+    "SussyBaka#79564": {
+      "gold": 101700,
+      "gems": 1770,
+      "updated_at": "2026-11-27T13:43:33+01:00"
     }
   }
 }
