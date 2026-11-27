@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-11-27T18:26:14+01:00",
-  "active_account": "TokaiTeio#97373",
+  "last_updated": "2026-11-27T19:04:47+01:00",
+  "active_account": "Peasant#46528",
   "accounts": {
     "Subarashi#13357": {
       "gold": 6175,
@@ -71,6 +71,11 @@
       "gold": 47950,
       "gems": 2550,
       "updated_at": "2026-11-27T18:26:14+01:00"
+    },
+    "Peasant#46528": {
+      "gold": 28875,
+      "gems": 1290,
+      "updated_at": "2026-11-27T19:04:47+01:00"
     }
   }
 }
